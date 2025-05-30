@@ -1,52 +1,8 @@
-version: '3.8'
-
 services:
   roblox_bot_1:
-    image: selenium/standalone-chrome
+    image: node:18
+    working_dir: /app
+    volumes:
+      - ./open-roblox.js:/app/open-roblox.js
     entrypoint: >
-      bash -c "sleep 1 && google-chrome --no-sandbox --headless --disable-gpu --disable-dev-shm-usage 'https://www.roblox.com/join/082sk'"
-
-  roblox_bot_2:
-    image: selenium/standalone-chrome
-    entrypoint: >
-      bash -c "sleep 2 && google-chrome --no-sandbox --headless --disable-gpu --disable-dev-shm-usage 'https://www.roblox.com/join/082sk'"
-
-  roblox_bot_3:
-    image: selenium/standalone-chrome
-    entrypoint: >
-      bash -c "sleep 3 && google-chrome --no-sandbox --headless --disable-gpu --disable-dev-shm-usage 'https://www.roblox.com/join/082sk'"
-
-  roblox_bot_4:
-    image: selenium/standalone-chrome
-    entrypoint: >
-      bash -c "sleep 4 && google-chrome --no-sandbox --headless --disable-gpu --disable-dev-shm-usage 'https://www.roblox.com/join/082sk'"
-
-  roblox_bot_5:
-    image: selenium/standalone-chrome
-    entrypoint: >
-      bash -c "sleep 5 && google-chrome --no-sandbox --headless --disable-gpu --disable-dev-shm-usage 'https://www.roblox.com/join/082sk'"
-
-  roblox_bot_6:
-    image: selenium/standalone-chrome
-    entrypoint: >
-      bash -c "sleep 6 && google-chrome --no-sandbox --headless --disable-gpu --disable-dev-shm-usage 'https://www.roblox.com/join/082sk'"
-
-  roblox_bot_7:
-    image: selenium/standalone-chrome
-    entrypoint: >
-      bash -c "sleep 7 && google-chrome --no-sandbox --headless --disable-gpu --disable-dev-shm-usage 'https://www.roblox.com/join/082sk'"
-
-  roblox_bot_8:
-    image: selenium/standalone-chrome
-    entrypoint: >
-      bash -c "sleep 8 && google-chrome --no-sandbox --headless --disable-gpu --disable-dev-shm-usage 'https://www.roblox.com/join/082sk'"
-
-  roblox_bot_9:
-    image: selenium/standalone-chrome
-    entrypoint: >
-      bash -c "sleep 9 && google-chrome --no-sandbox --headless --disable-gpu --disable-dev-shm-usage 'https://www.roblox.com/join/082sk'"
-
-  roblox_bot_10:
-    image: selenium/standalone-chrome
-    entrypoint: >
-      bash -c "sleep 10 && google-chrome --no-sandbox --headless --disable-gpu --disable-dev-shm-usage 'https://www.roblox.com/join/082sk'"
+      bash -c "npm install puppeteer && node open-roblox.js"
